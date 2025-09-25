@@ -1,0 +1,19 @@
+{
+  "name": "multi-ai-vscode",
+  "version": "1.2.0",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm:dev -w server\" \"npm:dev -w web\"",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "test:e2e": "npm run cypress:run -w web",
+    "test:e2e:open": "npm run cypress:open -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

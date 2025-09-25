@@ -1,0 +1,122 @@
+﻿
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: 24px;
+  align-items: start;
+}
+
+.side-panel {
+  position: sticky;
+  top: 110px;
+}
+
+.panel-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.panel-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.panel-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.panel-field select {
+  appearance: none;
+  background: color-mix(in srgb, var(--surface-strong) 80%, transparent);
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.panel-hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.panel-hint.muted {
+  font-size: 12px;
+}
+
+.panel-summary {
+  background: color-mix(in srgb, var(--surface-strong) 85%, transparent);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  padding: 12px;
+}
+
+.panel-summary-label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.panel-summary-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.panel-run {
+  align-self: flex-start;
+}
+
+.panel-error {
+  color: #f87171;
+  font-size: 13px;
+  background: color-mix(in srgb, #f87171 15%, transparent);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, #f87171 40%, transparent);
+}
+
+.panel-result {
+  background: color-mix(in srgb, var(--surface-strong) 90%, transparent);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  padding: 12px;
+}
+
+.panel-result pre {
+  margin: 0;
+  font: inherit;
+  white-space: pre-wrap;
+  color: var(--text);
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+    position: static;
+  }
+}
+
